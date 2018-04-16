@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Women In Tech</title>
+    <link type="text/css" rel="stylesheet" href="css/random.css" media="screen,projection" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+
+</head>
+
+<body id="bg-color-body">
+    <h1 id="heading-tag">Women In Technology</h1>
+    <!-- search form 3 -->
+    <form id="search-form_3">
+        <input type="text" class="search_3" />
+        <input type="submit" class="submit_3" value="Give an attempt!!" />
+    </form>
+    <script>
+        $(document).ready(function () {
+            $('#search-form_3').on('submit', function (e) {
+                e.preventDefault();
+                var arrayNum = ['How are you feeling today? Happy or Sad? Why?', 'What was the highlight of the year for you? What do you think about working at CIEC', 'Your thoughts on relationships? And who is your favorite.', 'Favorite food, and your favorite time pass. Your favorite TV Show.', 'A movie which you can quote? and why do you like? When was it the last you saw a movie?', 'Whom do you like your mom? or Dad?', 'What is the best gift you ever received?', 'What is the hardest thing you have ever done?', 'What time did you get up this morning? Are you a morning person?', 'What was your most memorable birthday? How do you like to celebrate your birthday?', 'Proudest moment? and Most embarrassing moment?', 'What did you want to be when you were little? What did you actually become?', 'What date your calendar you are looking forward to? What’s your favorite travel destination?', 'What is something no one here knows about you? What’s your idea of the perfect day?', 'What interest haven’t you pursued, but have always wanted to and what draws you to it?'];
+                var count = 2;
+                var tmp = arrayNum.slice(arrayNum);
+                var ret = [];
+
+                for (var i = 0; i < count; i++) {
+                    var index = Math.floor(Math.random() * tmp.length);
+                    var removed = tmp.splice(index, 1);
+                    // Since we are only removing one element
+                    ret.push(removed[0]);
+                }
+                console.log(ret);
+                $('#quest-display > p').html("<div class='container'> <div class='content'>" + "1)" + ret[0] + "<br/><p>2)" + ret[1] + "</p></div></div>");
+                $('.submit_3').prop('disabled', true);
+            });
+        });</script>
+    <div id="quest-display">
+
+
+        <p></p>
+    </div>
+    </div>
+</body>
+
+</html>
